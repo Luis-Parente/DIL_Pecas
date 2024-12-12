@@ -2,12 +2,15 @@ package model.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Venda implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private LocalDate data;
+	private Map<Peca, Integer> pecasVendidas = new HashMap<>();
 
 	public Venda() {
 
@@ -33,6 +36,18 @@ public class Venda implements Serializable {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+	}
+	
+	public void adicionarPeca(Peca peca, Integer quantidade) {
+		pecasVendidas.put(peca, quantidade);
+	}
+	
+	public void removerPeca(Peca peca) {
+		pecasVendidas.remove(peca);
+	}
+	
+	public Map<Peca, Integer> getPecaVendida(){
+		return pecasVendidas;
 	}
 
 	@Override

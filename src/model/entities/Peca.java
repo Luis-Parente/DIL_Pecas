@@ -8,22 +8,28 @@ public class Peca implements Serializable {
 	private Long id;
 	private String nome;
 	private Double preco;
+	private Integer quantidade;
 	private String descricao;
 
 	public Peca() {
 
 	}
 
-	public Peca(Long id, String nome, Double preco, String descricao) {
+	public Peca(Long id, String nome, Double preco, Integer quantidade, String descricao) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
+		this.quantidade = quantidade;
 		this.descricao = descricao;
 	}
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -48,6 +54,18 @@ public class Peca implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void adicionarPeca(Integer quantidade) {
+		this.quantidade += quantidade;
+	}
+
+	public void removerPeca(Integer quantidade) {
+		this.quantidade -= quantidade;
 	}
 
 	@Override
