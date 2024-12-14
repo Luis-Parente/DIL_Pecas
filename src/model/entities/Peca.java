@@ -60,12 +60,8 @@ public class Peca implements Serializable {
 		return quantidade;
 	}
 
-	public void adicionarPeca(Integer quantidade) {
-		this.quantidade += quantidade;
-	}
-
-	public void removerPeca(Integer quantidade) {
-		this.quantidade -= quantidade;
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	@Override
